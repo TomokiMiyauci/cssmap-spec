@@ -4,8 +4,7 @@ CSS map specification
 
 ## What
 
-CSS map is a standard for mapping (aliasing) identifiers to CSS rules and CSS
-declarations.
+CSS map is mapping (aliasing) identifiers to CSS rules and declarations.
 
 The current specification is limited to the JSON format.
 
