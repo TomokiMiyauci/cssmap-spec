@@ -3,24 +3,21 @@
   "properties": {
     "rules": {
       "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Za-z][A-Za-z0-9\\*\\)\\(\\]\\[./_-]*$"
+      },
       "patternProperties": {
-        ".+": {
+        "": {
           "type": "object",
+          "propertyNames": {
+            "pattern": "^[a-z-]+$"
+          },
           "patternProperties": {
-            "width": {
-              "description": "CSS declaration of width",
-              "type": "string",
-              "minLength": 1
-            },
-            "min-width": {
-              "description": "CSS declaration of min-width",
-              "type": "string",
-              "minLength": 1
-            },
-            "max-width": {
-              "description": "CSS declaration of max-width",
-              "type": "string",
-              "minLength": 1
+            "": {
+              "oneOf": [
+                { "type": "string" },
+                { "type": "number" }
+              ]
             }
           }
         }
@@ -41,17 +38,8 @@
                 "suffix": { "type": "string" }
               }
             },
-
-            "pseudo-class": {
-              "type": "string",
-              "minLength": 1
-            },
-
-            "pseudo-element": {
-              "type": "string",
-              "minLength": 1
-            },
-
+            "pseudo-class": { "type": "string", "minLength": 1 },
+            "pseudo-element": { "type": "string", "minLength": 1 },
             "media": { "type": "string", "minLength": 1 }
           }
         }
