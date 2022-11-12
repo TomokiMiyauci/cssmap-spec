@@ -4,19 +4,17 @@
     "rules": {
       "type": "object",
       "propertyNames": {
-        "pattern": "^[A-Za-z][A-Za-z0-9\\*\\)\\(\\]\\[./_-]*$"
+        "pattern": "^[A-Za-z][A-Za-z0-9./_-]*$"
       },
       "patternProperties": {
         "": {
           "type": "object",
-          "propertyNames": {
-            "pattern": "^[a-z-]+$"
-          },
           "patternProperties": {
             "": {
               "oneOf": [
                 { "type": "string" },
-                { "type": "number" }
+                { "type": "number" },
+                { "type": "object" }
               ]
             }
           }
